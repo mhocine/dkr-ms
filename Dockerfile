@@ -25,7 +25,7 @@ CMD ["/sbin/my_init"]
 RUN apt-get update && \
     apt-get install add-apt-key software-properties-common -y && \
     add-apt-repository ppa:ubuntugis/ubuntugis-unstable -y && \
-    add-apt-key -k keyserver.ubuntu.com 314DF160 && \
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 314DF160 && \
     apt-get update -yq
 
 # Install MapServer and friends
